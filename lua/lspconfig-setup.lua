@@ -11,7 +11,7 @@ local on_attach = function(client, bufnr)
         vim.keymap.set('n', keymap, action, bufopts)
     end
 
-    -- enable completion triggered by <c-x><c-o>
+    -- enable completion triggered by <c-x><c-o> | <S-Tab>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     vim_set_normalmode_keymap('gD', vim.lsp.buf.declaration)
@@ -29,11 +29,22 @@ local diagnostic_config = {
     float = {
         focusable = false,
         style = 'minimal',
+        border = 'single',
         source = 'always',
         header = '',
         prefix = '',
     }
 }
+-- right colors for the borders
+vim.cmd [[hi! NormalFloat guibg=background]]
+vim.cmd [[hi! FloatBorder guifg=foreground guibg=background]]
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = "single",
+  })
+
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = "single",
+  })
 vim.diagnostic.config(diagnostic_config)
 
 local lsp_flags = {
@@ -43,7 +54,14 @@ local lsp_flags = {
 local lsp_servers = {
     {
         name = 'lua_ls',
-        cmd = { "lua-language-server.sh" }
+        cmd = { "lua-language-server.sh" },
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
+                }
+            }
+        }
     },
     {
         name = 'rust_analyzer',
@@ -52,13 +70,16 @@ local lsp_servers = {
 }
 
 for _,lsp_server in pairs(lsp_servers) do
+    ---@type table<string, string|table|function>
 	local lsp_server_setup = {
 		on_attach = on_attach,
 		flags = lsp_flags,
 	}
 
 	for k,v in pairs(lsp_server) do
-	    if lsp_server.name ~= v then lsp_server_setup[k] = v end
+	    if lsp_server.name ~= v then
+            lsp_server_setup[k] = v
+        end
 	end
 
     nvim_lsp[lsp_server.name].setup(lsp_server_setup)
