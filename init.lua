@@ -1,0 +1,5 @@
+require "lazy-setup"
+require "lspconfig-setup"
+require "options"
+require "keymaps"
+require "colorscheme"
