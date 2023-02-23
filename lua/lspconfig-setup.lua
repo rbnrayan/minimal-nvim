@@ -35,16 +35,15 @@ local diagnostic_config = {
         prefix = '',
     }
 }
--- right colors for the borders
+
 vim.cmd [[hi! NormalFloat guibg=background]]
 vim.cmd [[hi! FloatBorder guifg=foreground guibg=background]]
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = "single",
-  })
-
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
     border = "single",
-  })
+})
 vim.diagnostic.config(diagnostic_config)
 
 local lsp_flags = {
