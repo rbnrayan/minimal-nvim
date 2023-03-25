@@ -1,4 +1,4 @@
 vim.cmd [[
     set background=dark
-    colorscheme kanagawa
+    colorscheme yello_world
 ]]

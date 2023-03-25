@@ -20,3 +20,20 @@ end, expr_opts)
 -- reselect selection after the identation
 keymap('v', '>', '>gv', opts)
 keymap('v', '<', '<gv', opts)
+
+-- window navigation
+keymap('n', '<C-h>', '<C-w>h', opts)
+keymap('n', '<C-j>', '<C-w>j', opts)
+keymap('n', '<C-k>', '<C-w>k', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
+
+-- moving text up and down
+keymap('v', '<A-j>', ':m .+1<CR>==gv', opts)
+keymap('v', '<A-k>', ':m .-2<CR>==gv', opts)
+
+-- Lazy plugins access
+keymap('n', '<leader>P', ':Lazy<CR>')
+
+-- Telescope
+keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
+keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)

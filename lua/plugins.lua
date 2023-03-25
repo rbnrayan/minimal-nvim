@@ -1,13 +1,18 @@
 return {
-    "ellisonleao/gruvbox.nvim",
-    "rebelot/kanagawa.nvim",
     "neovim/nvim-lspconfig",
+    "rbnrayan/yello_world.nvim",
+    "nvim-treesitter/nvim-treesitter",
     {
-        "windwp/nvim-autopairs",
+        "nvim-telescope/telescope.nvim", tag = "0.1.1",
+        dependencies = { "nvim-lua/plenary.nvim" },
         lazy = false,
-        config = function ()
-            require("nvim-autopairs").setup {}
-        end,
     },
+    -- {
+    --     "windwp/nvim-autopairs",
+    --     lazy = false,
+    --     config = function ()
+    --         require("nvim-autopairs").setup {}
+    --     end,
+    -- },
 }
 

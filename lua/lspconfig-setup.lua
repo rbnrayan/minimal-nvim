@@ -66,6 +66,13 @@ local lsp_servers = {
         name = 'rust_analyzer',
         settings = { ["rust-analyzer"] = {} }
     },
+    {
+        name = 'solargraph',
+        cmd = { "solargraph", "stdio" },
+        root_dir = function()
+            return vim.loop.cwd()
+        end
+    },
 }
 
 for _,lsp_server in pairs(lsp_servers) do
