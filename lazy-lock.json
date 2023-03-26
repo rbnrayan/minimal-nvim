@@ -1,8 +1,10 @@
 {
+  "dashboard-nvim": { "branch": "master", "commit": "669536db27ea411217f633ee54b63be41ecff300" },
   "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
-  "nvim-lspconfig": { "branch": "master", "commit": "52415d6bbf462a14647392857ea637adc753c056" },
+  "nvim-lspconfig": { "branch": "master", "commit": "e99d1590c7dc4c97b7dbc6a9c7e2dd830e204eea" },
   "nvim-treesitter": { "branch": "master", "commit": "c9ef5e58f7d59aba875324825ff47900d0be61f2" },
+  "nvim-web-devicons": { "branch": "master", "commit": "95b1e300699be8eb6b5be1758a9d4d69fe93cc7f" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "telescope.nvim": { "branch": "master", "commit": "c1a2af0af69e80e14e6b226d3957a064cd080805" },
-  "yello_world.nvim": { "branch": "main", "commit": "c90b841437fa183b39e5f7dde4cdb11bb0e5a271" }
+  "yello_world.nvim": { "branch": "main", "commit": "35dd665fcc01265da417ee634f6e9be8f9424582" }
 }
