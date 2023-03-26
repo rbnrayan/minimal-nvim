@@ -1,7 +1,7 @@
 local options = {
 	backup = false,
 	clipboard = "unnamedplus",
-	cmdheight = 2,
+	cmdheight = 1,
 	completeopt = { "menuone", "noselect" },
 	conceallevel = 0,
 	fileencoding = "utf-8",
@@ -43,4 +43,5 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
+vim.cmd "set iskeyword-=_"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
