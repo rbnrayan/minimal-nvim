@@ -2,9 +2,10 @@ return {
     {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
-        dependencies = { {'nvim-tree/nvim-web-devicons'}}
+        dependencies = { {'nvim-tree/nvim-web-devicons'} }
     },
     "neovim/nvim-lspconfig",
+    "phha/zenburn.nvim",
     "rbnrayan/yello_world.nvim",
     "nvim-treesitter/nvim-treesitter",
     {
@@ -12,12 +13,5 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         lazy = false,
     },
-    -- {
-    --     "windwp/nvim-autopairs",
-    --     lazy = false,
-    --     config = function ()
-    --         require("nvim-autopairs").setup {}
-    --     end,
-    -- },
 }
 

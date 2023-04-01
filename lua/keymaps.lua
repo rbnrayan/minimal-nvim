@@ -1,6 +1,6 @@
-local opts = { noremap = true, silent = true }
+local opts      = { noremap = true, silent = true }
 local expr_opts = { noremap = true, silent = true, expr = true }
-local keymap = vim.keymap.set
+local keymap    = vim.keymap.set
 
 keymap("", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
@@ -35,9 +35,15 @@ keymap('v', '<A-k>', ':m .-2<CR>==gv', opts)
 keymap('n', '<leader>P', ':Lazy<CR>')
 
 -- Telescope
-keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
-keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
-keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
-keymap('n', '<leader>fm', '<cmd>Telescope man_pages<CR>', opts)
-keymap('n', '<leader>fq', '<cmd>Telescope quickfix<CR>', opts)
-keymap('n', '<leader>f?', '<cmd>Telescope commands<CR>', opts)
+keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>' ,opts)
+keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>'  ,opts)
+keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>'    ,opts)
+keymap('n', '<leader>fm', '<cmd>Telescope man_pages<CR>'  ,opts)
+keymap('n', '<leader>fq', '<cmd>Telescope quickfix<CR>'   ,opts)
+keymap('n', '<leader>f?', '<cmd>Telescope commands<CR>'   ,opts)
+
+-- align lines (not available on windows :/)
+keymap('v', '&', ':\'<,\'>!column -t -o \' \'<CR>gv=', opts)
+
+-- clear Search highlighting
+keymap('n', '<A-l>', ':nohlsearch<CR>')
