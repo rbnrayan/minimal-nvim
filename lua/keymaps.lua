@@ -42,7 +42,7 @@ keymap('n', '<leader>fm', '<cmd>Telescope man_pages<CR>'  ,opts)
 keymap('n', '<leader>fq', '<cmd>Telescope quickfix<CR>'   ,opts)
 keymap('n', '<leader>f?', '<cmd>Telescope commands<CR>'   ,opts)
 
-if vim.fn.has("unix") then
+if vim.loop.os_uname().sysname == "Linux" then
     -- align lines (not available on windows :/)
     keymap('v', '&', ':\'<,\'>!column -t -o \' \'<CR>gv=', opts)
 end

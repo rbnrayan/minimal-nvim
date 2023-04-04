@@ -4,7 +4,10 @@ if not status then
 end
 
 configs.setup {
+    ensure_installed = { 'c', 'rust', 'lua' };
+
     sync_install = false,
+
     highlight = {
         enable = true,
     },

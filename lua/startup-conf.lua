@@ -4,10 +4,11 @@ if not status then
 end
 
 local config_path = ''
+local sysname = vim.loop.os_uname().sysname
 
-if vim.fn.has("unix") then
+if sysname == "Linux" then
     config_path = "$HOME/.config/nvim"
-elseif vim.fn.has("win32") then
+elseif sysname == "Windows_NT" then
     config_path = "$HOME/AppData/Local/nvim"
 end
 
