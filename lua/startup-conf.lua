@@ -3,6 +3,14 @@ if not status then
     return
 end
 
+local config_path = ''
+
+if vim.fn.has("unix") then
+    config_path = "$HOME/.config/nvim"
+elseif vim.fn.has("win32") then
+    config_path = "$HOME/AppData/Local/nvim"
+end
+
 dashboard.setup({
     theme = "doom",
     config = {
@@ -65,7 +73,7 @@ dashboard.setup({
                 key = "c",
                 keymap = "",
                 key_hl = "String",
-                action = "cd $HOME/.config/nvim"
+                action = "cd " .. config_path
             },
             {
                 desc = "Exit   ",

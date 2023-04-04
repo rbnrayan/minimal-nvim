@@ -42,8 +42,10 @@ keymap('n', '<leader>fm', '<cmd>Telescope man_pages<CR>'  ,opts)
 keymap('n', '<leader>fq', '<cmd>Telescope quickfix<CR>'   ,opts)
 keymap('n', '<leader>f?', '<cmd>Telescope commands<CR>'   ,opts)
 
--- align lines (not available on windows :/)
-keymap('v', '&', ':\'<,\'>!column -t -o \' \'<CR>gv=', opts)
+if vim.fn.has("unix") then
+    -- align lines (not available on windows :/)
+    keymap('v', '&', ':\'<,\'>!column -t -o \' \'<CR>gv=', opts)
+end
 
 -- clear Search highlighting
 keymap('n', '<A-l>', ':nohlsearch<CR>')
