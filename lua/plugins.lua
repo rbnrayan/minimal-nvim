@@ -13,6 +13,13 @@ return {
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    },
+
+    -- Magit
+    {
+        "TimUntersberger/neogit",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        lazy = false
     }
 }
 
