@@ -31,9 +31,6 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 keymap('v', '<A-j>', ':m .+1<CR>==gv', opts)
 keymap('v', '<A-k>', ':m .-2<CR>==gv', opts)
 
--- Lazy plugins access
-keymap('n', '<leader>P', ':Lazy<CR>')
-
 -- Telescope
 keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>' ,opts)
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>'  ,opts)
