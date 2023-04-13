@@ -1,4 +1,4 @@
 vim.cmd [[
     set background=dark
-    colorscheme zenburn
+    colorscheme yello_world
 ]]

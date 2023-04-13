@@ -1,9 +1,8 @@
 require "lazy-setup"
-require "telescope-conf"
-require "startup-conf"
 require "options"
 require "keymaps"
 require "colorscheme"
 require "treesitter"
 require "mason-setup"
 require "lspconfig-setup"
+
