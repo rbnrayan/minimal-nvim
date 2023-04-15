@@ -6,13 +6,14 @@ keymap("", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- :b(n|p) => <leader>b(n|p)
-keymap('n', '<leader>bn', ':bn<CR>', opts)
-keymap('n', '<leader>bp', ':bp<CR>', opts)
+-- list buffers and prompt to switch
+keymap('n', '<C-b>', ':ls<CR>:b<SPACE>', opts)
 
+-- toggle omni-completion on <S-Tab> if available
 keymap('i', '<S-Tab>', function()
     return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-x><C-o>'
 end, expr_opts)
+-- if completion menu is visible make <Tab> act as <C-n>
 keymap('i', '<Tab>', function()
     return vim.fn.pumvisible() ~= 0 and "<C-n>" or "<Tab>"
 end, expr_opts)
@@ -32,7 +33,7 @@ keymap('v', '<A-j>', ':m .+1<CR>==gv', opts)
 keymap('v', '<A-k>', ':m .-2<CR>==gv', opts)
 
 if vim.loop.os_uname().sysname == "Linux" then
-    -- align lines (not available on windows :/)
+    -- align lines (`column` cmd not available on windows :/)
     keymap('v', '&', ':\'<,\'>!column -t -o \' \'<CR>gv=', opts)
 end
 
