@@ -33,7 +33,7 @@ local options = {
 	scrolloff = 4,
 	sidescrolloff = 8,
 	guifont = "monospace:h15",
-    -- guicursor = "i:block",
+    guicursor = "i:block",
 	laststatus = 3,
 }
 

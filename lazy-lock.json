@@ -1,10 +1,10 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "57cce98dfdb2f2dd05a0567d89811e6d0505e13b" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "b81c50c4baae7d80b1723b3fa86e814d7754d15b" },
-  "mason.nvim": { "branch": "main", "commit": "6845ccfe009d6fbc5a6a266c285779ad462b234b" },
+  "mason.nvim": { "branch": "main", "commit": "3664448c41717f1c40a42839cbb55c925ea11046" },
   "neogit": { "branch": "master", "commit": "69a6ca7c41b023ebf9cad70778e227b3209b40c4" },
-  "nvim-lspconfig": { "branch": "master", "commit": "7f776b7d0a028e9d63d2e9389d7fdfc48cbb15d6" },
-  "nvim-treesitter": { "branch": "master", "commit": "ba6c55b203748ec099127914d34554a575e051c0" },
+  "nvim-lspconfig": { "branch": "master", "commit": "e52efca5d4f5536533d447ec0d97e4d525b37ace" },
+  "nvim-treesitter": { "branch": "master", "commit": "f7e8b7420ccf8bc61534ea6155db03d62c7ff571" },
   "plenary.nvim": { "branch": "master", "commit": "9ac3e9541bbabd9d73663d757e4fe48a675bb054" },
-  "yello_world.nvim": { "branch": "main", "commit": "20b4d796e8de4aa26b052b0f3209015d2554b4e4" }
+  "yello_world.nvim": { "branch": "main", "commit": "ebb0a6f95ae9da6daa58757883a5cc81323fed31" }
 }

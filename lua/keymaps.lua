@@ -31,14 +31,6 @@ keymap('n', '<C-l>', '<C-w>l', opts)
 keymap('v', '<A-j>', ':m .+1<CR>==gv', opts)
 keymap('v', '<A-k>', ':m .-2<CR>==gv', opts)
 
--- Telescope
-keymap('n', '<leader>ff', '<cmd>Telescope find_files<CR>' ,opts)
-keymap('n', '<leader>fg', '<cmd>Telescope live_grep<CR>'  ,opts)
-keymap('n', '<leader>fb', '<cmd>Telescope buffers<CR>'    ,opts)
-keymap('n', '<leader>fm', '<cmd>Telescope man_pages<CR>'  ,opts)
-keymap('n', '<leader>fq', '<cmd>Telescope quickfix<CR>'   ,opts)
-keymap('n', '<leader>f?', '<cmd>Telescope commands<CR>'   ,opts)
-
 if vim.loop.os_uname().sysname == "Linux" then
     -- align lines (not available on windows :/)
     keymap('v', '&', ':\'<,\'>!column -t -o \' \'<CR>gv=', opts)
