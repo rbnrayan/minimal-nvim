@@ -119,7 +119,7 @@ local on_attach = function(client, bufnr)
     vim_set_normalmode_keymap('gd', vim.lsp.buf.definition)
     vim_set_normalmode_keymap('K', vim.lsp.buf.hover)
     vim_set_normalmode_keymap('gi', vim.lsp.buf.implementation)
-    vim_set_normalmode_keymap('<C-k>', vim.lsp.buf.signature_help)
+    -- vim_set_normalmode_keymap('<C-k>', vim.lsp.buf.signature_help)
     vim_set_normalmode_keymap('gl', vim.diagnostic.open_float)
 end
 
@@ -128,11 +128,24 @@ local lsp_flags = {
 }
 
 require("mason").setup(DEFAULT_SETTINGS)
-require("mason-lspconfig").setup_handlers {
+require("mason-lspconfig").setup_handlers({
     function (server_name)
         require("lspconfig")[server_name].setup {
             on_attach = on_attach,
-            flags = lsp_flags
+            flags = lsp_flags,
         }
     end,
-}
+    ["lua_ls"] = function ()
+        require("lspconfig")["lua_ls"].setup {
+            on_attach = on_attach,
+            flags = lsp_flags,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" }
+                    }
+                }
+            }
+        }
+    end
+})

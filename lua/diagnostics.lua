@@ -1,9 +1,3 @@
-local status, nvim_lsp = pcall(require, "lspconfig")
-if not status then
-    vim.api.nvim_echo({{"Failed to require `lspconfig`...", 'None'}}, true, {})
-    return
-end
-
 local diagnostic_config = {
     virtual_text = false,
     update_in_insert = false,
@@ -28,23 +22,3 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 })
 vim.diagnostic.config(diagnostic_config)
 
-
--- local lsp_servers = {
---     -- install LSP servers with :MasonInstall <LSP_server>
--- }
--- 
--- for _,lsp_server in pairs(lsp_servers) do
---     ---@type table<string, string|table|function>
--- 	local lsp_server_setup = {
--- 		on_attach = on_attach,
--- 		flags = lsp_flags,
--- 	}
--- 
--- 	for k,v in pairs(lsp_server) do
--- 	    if lsp_server.name ~= v then
---             lsp_server_setup[k] = v
---         end
--- 	end
--- 
---     nvim_lsp[lsp_server.name].setup(lsp_server_setup)
--- end

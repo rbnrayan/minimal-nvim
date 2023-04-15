@@ -4,5 +4,5 @@ require "keymaps"
 require "colorscheme"
 require "treesitter"
 require "mason-setup"
-require "lspconfig-setup"
+require "diagnostics"
 
