@@ -9,14 +9,27 @@ vim.g.maplocalleader = " "
 -- list buffers and prompt to switch
 keymap('n', '<C-b>', ':ls<CR>:b<SPACE>', opts)
 
+-- open file explorer and resize it
+keymap('n', '<Leader>e', ':Vex | vert res 50<CR>', opts)
+
 -- toggle omni-completion on <S-Tab> if available
-keymap('i', '<S-Tab>', function()
-    return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-x><C-o>'
-end, expr_opts)
--- if completion menu is visible make <Tab> act as <C-n>
-keymap('i', '<Tab>', function()
-    return vim.fn.pumvisible() ~= 0 and "<C-n>" or "<Tab>"
-end, expr_opts)
+if vim.api.nvim_buf_get_option(0, 'omnifunc') == '' then
+    keymap('i', '<S-Tab>', function()
+        return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-n>'
+    end, expr_opts)
+    -- if completion menu is visible make <Tab> act as <C-n>
+    keymap('i', '<Tab>', function()
+        return vim.fn.pumvisible() ~= 0 and "<C-n>" or "<Tab>"
+    end, expr_opts)
+else
+    keymap('i', '<S-Tab>', function()
+        return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-x><C-o>'
+    end, expr_opts)
+    -- if completion menu is visible make <Tab> act as <C-n>
+    keymap('i', '<Tab>', function()
+        return vim.fn.pumvisible() ~= 0 and "<C-n>" or "<Tab>"
+    end, expr_opts)
+end
 
 -- reselect selection after the identation
 keymap('v', '>', '>gv', opts)

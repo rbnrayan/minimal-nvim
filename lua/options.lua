@@ -45,3 +45,8 @@ end
 
 vim.cmd "set iskeyword-=_"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
+
+vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+    pattern = "*.rs",
+    command = vim.cmd [[set makeprg="cargo run"]]
+})

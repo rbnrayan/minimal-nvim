@@ -1,6 +1,9 @@
 return {
     -- Colorschemes
+    "chrsm/paramount-ng.nvim",
+    "savq/melange-nvim",
     "rbnrayan/yello_world.nvim",
+    "phha/zenburn.nvim",
 
     "nvim-treesitter/nvim-treesitter",
 
