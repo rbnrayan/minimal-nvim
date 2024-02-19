@@ -1,9 +1,8 @@
 return {
     -- Colorschemes
-    "chrsm/paramount-ng.nvim",
     "savq/melange-nvim",
+    "chrsm/paramount-ng.nvim",
     "rbnrayan/yello_world.nvim",
-    "phha/zenburn.nvim",
 
     "nvim-treesitter/nvim-treesitter",
 
@@ -15,14 +14,7 @@ return {
     },
     {
         "williamboman/mason.nvim",
-        build = ":MasonUpdate" -- :MasonUpdate updates registry contents
+        -- build = ":MasonUpdate" -- :MasonUpdate updates registry contents
     },
-
-    -- Magit
-    {
-        "TimUntersberger/neogit",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        lazy = false
-    }
 }
 
