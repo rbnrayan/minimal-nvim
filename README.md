@@ -6,6 +6,10 @@ Minimalistic nvim configuration with few plugins managed by [lazy.nvim](https://
 
 Options that I'm used to and some keymaps I find useful, I might add more by the time.
 
+## Dependencies
+
+- [tree-sitter](https://tree-sitter.github.io/tree-sitter/)
+
 ## Plugins
 
 - [yello_world.nvim](https://github.com/rbnrayan/yello_world.nvim) - a yellowish colorscheme for neovim (highly inspired by / port of [Gruber Darker](https://github.com/rexim/gruber-darker-theme))
@@ -13,4 +17,3 @@ Options that I'm used to and some keymaps I find useful, I might add more by the
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - easy way to configure language servers (LSP)
 - [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP, DAP, linters, formatters manager
 - [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim) - bridge `mason.nvim` with `lspconfig`
-- [neogit](https://github.com/TimUntersberger/neogit) - Magit port for neovim
