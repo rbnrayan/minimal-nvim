@@ -3,6 +3,6 @@ require "options"
 require "keymaps"
 require "colorscheme"
 require "treesitter"
-require "mason-setup"
+require "lsp-setup"
 require "diagnostics"
 

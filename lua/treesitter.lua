@@ -4,7 +4,7 @@ if not status then
 end
 
 configs.setup {
-    ensure_installed = { 'c', 'rust', 'lua' };
+    ensure_installed = { 'lua', 'vimdoc' };
 
     sync_install = false,
 

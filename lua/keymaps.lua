@@ -13,23 +13,20 @@ keymap('n', '<C-b>', ':ls<CR>:b<SPACE>', opts)
 keymap('n', '<Leader>e', ':Vex | vert res 50<CR>', opts)
 
 -- toggle omni-completion on <S-Tab> if available
-if vim.api.nvim_buf_get_option(0, 'omnifunc') == '' then
-    keymap('i', '<S-Tab>', function()
-        return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-n>'
-    end, expr_opts)
-    -- if completion menu is visible make <Tab> act as <C-n>
-    keymap('i', '<Tab>', function()
-        return vim.fn.pumvisible() ~= 0 and "<C-n>" or "<Tab>"
-    end, expr_opts)
-else
+if vim.api.nvim_buf_get_option(0, 'omnifunc') ~= '' then
     keymap('i', '<S-Tab>', function()
         return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-x><C-o>'
     end, expr_opts)
-    -- if completion menu is visible make <Tab> act as <C-n>
-    keymap('i', '<Tab>', function()
-        return vim.fn.pumvisible() ~= 0 and "<C-n>" or "<Tab>"
+else
+    keymap('i', '<S-Tab>', function()
+        return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-n>'
     end, expr_opts)
 end
+
+-- if completion menu is visible make <Tab> act as <C-n>
+keymap('i', '<Tab>', function()
+    return vim.fn.pumvisible() ~= 0 and "<C-n>" or "<Tab>"
+end, expr_opts)
 
 -- reselect selection after the identation
 keymap('v', '>', '>gv', opts)

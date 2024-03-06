@@ -1,4 +1,4 @@
 vim.cmd [[
     set background=dark
-    colorscheme melange
+    colorscheme gruber-darker
 ]]

@@ -1,8 +1,9 @@
 return {
     -- Colorschemes
-    "savq/melange-nvim",
-    "chrsm/paramount-ng.nvim",
-    "rbnrayan/yello_world.nvim",
+    -- "catppuccin/nvim",
+    -- "rbnrayan/yello_world.nvim",
+    "blazkowolf/gruber-darker.nvim",
+    "nyoom-engineering/oxocarbon.nvim",
 
     "nvim-treesitter/nvim-treesitter",
 
@@ -11,10 +12,6 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         lazy = false
-    },
-    {
-        "williamboman/mason.nvim",
-        -- build = ":MasonUpdate" -- :MasonUpdate updates registry contents
     },
 }
 
