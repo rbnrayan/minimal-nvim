@@ -1,9 +1,7 @@
 return {
     -- Colorschemes
-    -- "catppuccin/nvim",
-    -- "rbnrayan/yello_world.nvim",
     "blazkowolf/gruber-darker.nvim",
-    "nyoom-engineering/oxocarbon.nvim",
+    "phha/zenburn.nvim",
 
     "nvim-treesitter/nvim-treesitter",
 
