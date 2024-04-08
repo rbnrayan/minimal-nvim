@@ -56,6 +56,10 @@ set_lsp('lua_ls', {
     }
 })
 
+set_lsp('clangd', {
+    cmd = { vim.fn.expand('~/.nix-profile/bin/clangd') },
+})
+
 set_lsp('jdtls', {
     cmd = {
         vim.fn.expand('~/.nix-profile/bin/jdt-language-server'),
@@ -66,3 +70,7 @@ set_lsp('jdtls', {
         return vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1])
     end,
 })
+
+set_lsp('zls', {
+    cmd = { vim.fn.expand('~/.nix-profile/bin/zls') },
+});

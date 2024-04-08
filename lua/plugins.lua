@@ -1,7 +1,8 @@
 return {
     -- Colorschemes
     "blazkowolf/gruber-darker.nvim",
-    "phha/zenburn.nvim",
+    "nyoom-engineering/oxocarbon.nvim",
+    "NTBBloodbath/doom-one.nvim",
 
     "nvim-treesitter/nvim-treesitter",
 
