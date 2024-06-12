@@ -1,10 +1,34 @@
+local cmp = require('cmp')
+local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-y>'] = cmp.mapping.confirm({ select = false }),
+        ['<C-Space>'] = cmp.mapping.complete(),
+    }),
+    window = {},
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+    }, {
+            { name = 'buffer' },
+    }),
+})
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
 
 local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     local expr_bufopts = { noremap = true, silent = true, expr = true, buffer = bufnr }
 
@@ -34,6 +58,7 @@ local function set_lsp(srv_name, other)
     local config = {
         on_attach = on_attach,
         flags = lsp_flags,
+        capabilities = capabilities,
     }
 
     for key, value in pairs(other) do
@@ -71,6 +96,11 @@ set_lsp('jdtls', {
     end,
 })
 
-set_lsp('zls', {
-    cmd = { vim.fn.expand('~/.nix-profile/bin/zls') },
-});
+set_lsp('ocamllsp', {
+    cmd = { vim.fn.expand('~/.nix-profile/bin/ocamllsp') },
+    root_dir = function ()
+        return vim.fs.dirname(vim.fs.find({ "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" }, { upward = true })[1])
+    end,
+})
+
+

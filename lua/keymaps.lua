@@ -10,7 +10,7 @@ vim.g.maplocalleader = " "
 keymap('n', '<C-b>', ':ls<CR>:b<SPACE>', opts)
 
 -- open file explorer and resize it
-keymap('n', '<Leader>e', ':Vex | vert res 50<CR>', opts)
+keymap('n', '<Leader>e', vim.cmd.Ex)
 
 -- toggle omni-completion on <S-Tab> if available
 if vim.api.nvim_buf_get_option(0, 'omnifunc') ~= '' then

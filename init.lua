@@ -2,7 +2,7 @@ require "lazy-setup"
 require "colorscheme"
 require "keymaps"
 require "options"
+require "autopairs"
 require "treesitter"
 require "lsp-setup"
 require "diagnostics"
-
