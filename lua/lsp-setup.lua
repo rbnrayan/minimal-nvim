@@ -97,7 +97,8 @@ set_lsp('jdtls', {
 })
 
 set_lsp('ocamllsp', {
-    cmd = { vim.fn.expand('~/.nix-profile/bin/ocamllsp') },
+    cmd = { vim.fn.expand('~/.opam/default/bin/ocamllsp') },
+    filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
     root_dir = function ()
         return vim.fs.dirname(vim.fs.find({ "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" }, { upward = true })[1])
     end,

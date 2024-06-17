@@ -1,14 +1,4 @@
 return {
-    -- Colorschemes
-    "blazkowolf/gruber-darker.nvim",
-    "nyoom-engineering/oxocarbon.nvim",
-    {
-        'jesseleite/nvim-noirbuddy',
-        dependencies = {
-            { 'tjdevries/colorbuddy.nvim' }
-        },
-    },
-
     "nvim-treesitter/nvim-treesitter",
 
     -- LSP
@@ -34,6 +24,27 @@ return {
         config = true,
         -- use opts = {} for passing setup options
         -- this is equalent to setup({}) function
-    }
+    },
+
+    -- Harpoon
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+
+    -- Colorschemes
+    "blazkowolf/gruber-darker.nvim",
+    "nyoom-engineering/oxocarbon.nvim",
+    {
+        "rose-pine/neovim", as = "rose-pine",
+    },
+    {
+        'jesseleite/nvim-noirbuddy',
+        dependencies = {
+            { 'tjdevries/colorbuddy.nvim' }
+        },
+    },
+    "felipeagc/fleet-theme-nvim",
 }
 
