@@ -10,14 +10,14 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<C-y>'] = cmp.mapping.confirm({ select = false }),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
     window = {},
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
     }, {
-            { name = 'buffer' },
+        { name = 'buffer' },
     }),
 })
 
@@ -28,7 +28,9 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-local on_attach = function(_, bufnr)
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     local expr_bufopts = { noremap = true, silent = true, expr = true, buffer = bufnr }
 
@@ -42,9 +44,21 @@ local on_attach = function(_, bufnr)
 
     -- enable completion triggered by <c-x><c-o> | <S-Tab>
     vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
-    vim_set_insertmode_keymap('<S-Tab>', function ()
+    vim_set_insertmode_keymap('<S-Tab>', function()
         return vim.fn.pumvisible() ~= 0 and '<C-p>' or '<C-x><C-o>'
     end)
+
+    -- format on save
+    if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = augroup,
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format({ async = false, id = client.id })
+            end
+        })
+    end
 
     vim_set_normalmode_keymap('gD', vim.lsp.buf.declaration)
     vim_set_normalmode_keymap('gd', vim.lsp.buf.definition)
@@ -91,7 +105,7 @@ set_lsp('jdtls', {
         '-configuration', vim.fn.expand('~/.cache/jdtls/config'),
         '-data', vim.fn.expand('~/.cache/jdtls/workspace'),
     },
-    root_dir = function ()
+    root_dir = function()
         return vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1])
     end,
 })
@@ -99,9 +113,8 @@ set_lsp('jdtls', {
 set_lsp('ocamllsp', {
     cmd = { vim.fn.expand('~/.opam/default/bin/ocamllsp') },
     filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
-    root_dir = function ()
-        return vim.fs.dirname(vim.fs.find({ "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" }, { upward = true })[1])
+    root_dir = function()
+        return vim.fs.dirname(vim.fs.find(
+            { "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" }, { upward = true })[1])
     end,
 })
-
-
