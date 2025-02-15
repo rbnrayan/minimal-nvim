@@ -26,6 +26,11 @@ return {
         -- this is equalent to setup({}) function
     },
 
+    {
+        "gpanders/nvim-parinfer",
+        lazy = false,
+    },
+
     -- Harpoon
     {
         "ThePrimeagen/harpoon",
@@ -34,17 +39,16 @@ return {
     },
 
     -- Colorschemes
-    "blazkowolf/gruber-darker.nvim",
+    -- "blazkowolf/gruber-darker.nvim",
     "nyoom-engineering/oxocarbon.nvim",
-    {
-        "rose-pine/neovim", as = "rose-pine",
-    },
-    {
-        'jesseleite/nvim-noirbuddy',
-        dependencies = {
-            { 'tjdevries/colorbuddy.nvim' }
-        },
-    },
     "felipeagc/fleet-theme-nvim",
+    "Mofiqul/vscode.nvim",
+    "rebelot/kanagawa.nvim",
+    "sainnhe/everforest",
+    "xero/miasma.nvim",
+    "morhetz/gruvbox",
+    "navarasu/onedark.nvim",
+    "folke/tokyonight.nvim",
+    "ficcdaf/ashen.nvim",
+    { "catppuccin/nvim", name = "catppuccin" }
 }
-

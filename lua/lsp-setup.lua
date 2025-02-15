@@ -49,16 +49,16 @@ local on_attach = function(client, bufnr)
     end)
 
     -- format on save
-    if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = augroup,
-            buffer = bufnr,
-            callback = function()
-                vim.lsp.buf.format({ async = false, id = client.id })
-            end
-        })
-    end
+    -- if client.supports_method("textDocument/formatting") then
+    --     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    --     vim.api.nvim_create_autocmd("BufWritePre", {
+    --         group = augroup,
+    --         buffer = bufnr,
+    --         callback = function()
+    --             vim.lsp.buf.format({ async = false, id = client.id })
+    --         end
+    --     })
+    -- end
 
     vim_set_normalmode_keymap('gD', vim.lsp.buf.declaration)
     vim_set_normalmode_keymap('gd', vim.lsp.buf.definition)
@@ -117,4 +117,18 @@ set_lsp('ocamllsp', {
         return vim.fs.dirname(vim.fs.find(
             { "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" }, { upward = true })[1])
     end,
+})
+
+set_lsp('gopls', {
+    cmd = { vim.fn.expand('~/.nix-profile/bin/gopls') },
+})
+
+set_lsp('elixirls', {
+    cmd = { vim.fn.expand('~/.nix-profile/bin/elixir-ls') },
+    single_file_support = true,
+})
+
+set_lsp('clojure_lsp', {
+    cmd = { vim.fn.expand('~/.nix-profile/bin/clojure-lsp') },
+    filetypes = { "clojure", "clj", "edn" },
 })
