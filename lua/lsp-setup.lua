@@ -28,7 +28,7 @@ local lsp_flags = {
     debounce_text_changes = 150,
 }
 
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -97,8 +97,4 @@ set_lsp('lua_ls', {
 
 set_lsp('clangd', {
     cmd = { "clangd" },
-})
-
-set_lsp('ocamllsp', {
-    cmd = { "ocamllsp" }
 })
