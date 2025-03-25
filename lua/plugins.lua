@@ -26,29 +26,9 @@ return {
         -- this is equalent to setup({}) function
     },
 
-    {
-        "gpanders/nvim-parinfer",
-        lazy = false,
-    },
-
-    -- Harpoon
-    {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" }
-    },
-
     -- Colorschemes
-    -- "blazkowolf/gruber-darker.nvim",
-    "nyoom-engineering/oxocarbon.nvim",
     "felipeagc/fleet-theme-nvim",
     "Mofiqul/vscode.nvim",
-    "rebelot/kanagawa.nvim",
-    "sainnhe/everforest",
-    "xero/miasma.nvim",
-    "morhetz/gruvbox",
-    "navarasu/onedark.nvim",
-    "folke/tokyonight.nvim",
-    "ficcdaf/ashen.nvim",
-    { "catppuccin/nvim", name = "catppuccin" }
+    "projekt0n/github-nvim-theme",
+    "vague2k/vague.nvim",
 }

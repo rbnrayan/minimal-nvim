@@ -85,7 +85,7 @@ end
 vim.lsp.set_log_level('info')
 
 set_lsp('lua_ls', {
-    cmd = { vim.fn.expand('~/.nix-profile/bin/lua-language-server') },
+    cmd = { "lua-language-server" },
     settings = {
         Lua = {
             diagnostics = {
@@ -96,39 +96,9 @@ set_lsp('lua_ls', {
 })
 
 set_lsp('clangd', {
-    cmd = { vim.fn.expand('~/.nix-profile/bin/clangd') },
-})
-
-set_lsp('jdtls', {
-    cmd = {
-        vim.fn.expand('~/.nix-profile/bin/jdt-language-server'),
-        '-configuration', vim.fn.expand('~/.cache/jdtls/config'),
-        '-data', vim.fn.expand('~/.cache/jdtls/workspace'),
-    },
-    root_dir = function()
-        return vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1])
-    end,
+    cmd = { "clangd" },
 })
 
 set_lsp('ocamllsp', {
-    cmd = { vim.fn.expand('~/.opam/default/bin/ocamllsp') },
-    filetypes = { "ocaml", "menhir", "ocamlinterface", "ocamllex", "reason", "dune" },
-    root_dir = function()
-        return vim.fs.dirname(vim.fs.find(
-            { "*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace" }, { upward = true })[1])
-    end,
-})
-
-set_lsp('gopls', {
-    cmd = { vim.fn.expand('~/.nix-profile/bin/gopls') },
-})
-
-set_lsp('elixirls', {
-    cmd = { vim.fn.expand('~/.nix-profile/bin/elixir-ls') },
-    single_file_support = true,
-})
-
-set_lsp('clojure_lsp', {
-    cmd = { vim.fn.expand('~/.nix-profile/bin/clojure-lsp') },
-    filetypes = { "clojure", "clj", "edn" },
+    cmd = { "ocamllsp" }
 })

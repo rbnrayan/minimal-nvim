@@ -1,7 +1,6 @@
 require "lazy-setup"
 require "colorscheme"
 require "keymaps"
-require "harpoon-setup"
 require "options"
 require "autopairs"
 require "treesitter"

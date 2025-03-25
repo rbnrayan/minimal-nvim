@@ -9,17 +9,8 @@ if not status then
 end
 local parser_configs = parsers.get_parser_configs()
 
-parser_configs.fsharp = {
-    install_info = {
-        url = "https://github.com/ionide/tree-sitter-fsharp",
-        branch = "main",
-        files = { "src/scanner.c", "src/parser.c" },
-    },
-    filetype = "fsharp",
-}
-
 configs.setup {
-    ensure_installed = { 'lua', 'vimdoc', 'fsharp' };
+    ensure_installed = { 'lua', 'vimdoc' };
 
     sync_install = false,
 

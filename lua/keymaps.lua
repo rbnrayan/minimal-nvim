@@ -6,11 +6,17 @@ keymap("", "<space>", "<nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- list buffers and prompt to switch
-keymap('n', '<C-b>', ':ls<CR>:b<SPACE>', opts)
-
 -- open file explorer and resize it
 keymap('n', '<Leader>e', vim.cmd.Ex)
+
+-- list buffers and prompt to switch
+keymap('n', '<Leader>bb', ':ls<CR>:b<SPACE>', opts)
+
+-- next buffer
+keymap('n', '<Leader>bn', vim.cmd.bnext)
+
+-- previous buffer
+keymap('n', '<Leader>bp', vim.cmd.bprev)
 
 -- toggle omni-completion on <S-Tab> if available
 if vim.api.nvim_buf_get_option(0, 'omnifunc') ~= '' then
