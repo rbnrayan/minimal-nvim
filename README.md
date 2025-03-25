@@ -9,11 +9,20 @@ Options that I'm used to and some keymaps I find useful, I might add more by the
 ## Dependencies
 
 - [tree-sitter](https://tree-sitter.github.io/tree-sitter/)
+- [clangd](https://clangd.llvm.org/)
+- [lua_ls](https://github.com/LuaLS/lua-language-server)
 
 ## Plugins
 
-- [yello_world.nvim](https://github.com/rbnrayan/yello_world.nvim) - a yellowish colorscheme for neovim (highly inspired by / port of [Gruber Darker](https://github.com/rexim/gruber-darker-theme))
-- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - easy way to use the interface for tree-sitter
-- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - easy way to configure language servers (LSP)
-- [mason.nvim](https://github.com/williamboman/mason.nvim) - LSP, DAP, linters, formatters manager
-- [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim) - bridge `mason.nvim` with `lspconfig`
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Nvim Treesitter configurations and abstraction layer
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Easy way to configure language servers (LSP)
+- [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - A completion plugin for neovim coded in Lua
+- [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - nvim-cmp source for neovim builtin LSP client 
+- [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer) - nvim-cmp source for buffer words
+- [hrsh7th/cmp-path](https://github.com/hrsh7th/cmp-path) - nvim-cmp source for path
+- [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) - nvim-cmp source for vim's cmdline 
+- [hrsh7th/cmp-vsnip](https://github.com/hrsh7th/cmp-vsnip) - nvim-cmp source for vim-vsnip
+- [hrsh7th/vim-vsnip](https://github.com/hrsh7th/vim-vsnip) - Snippet plugin for vim/nvim that supports LSP/VSCode's snippet format
+- [fleet-theme](https://github.com/projekt0n/github-nvim-theme) - GitHub's Neovim themes
+- [vscode.nvim](https://github.com/Mofiqul/vscode.nvim) - Neovim/Vim color scheme inspired by Dark+ and Light+ theme in Visual Studio Code
+- [vague.nvim](https://github.com/vague2k/vague.nvim) - A cool, dark, low contrast, theme inspired by ThePrimeagen's tmux not fixing rose-pine colors
