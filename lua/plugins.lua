@@ -29,6 +29,5 @@ return {
     -- Colorschemes
     "felipeagc/fleet-theme-nvim",
     "Mofiqul/vscode.nvim",
-    "projekt0n/github-nvim-theme",
     "vague2k/vague.nvim",
 }
