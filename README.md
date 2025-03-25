@@ -23,6 +23,7 @@ Options that I'm used to and some keymaps I find useful, I might add more by the
 - [hrsh7th/cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) - nvim-cmp source for vim's cmdline 
 - [hrsh7th/cmp-vsnip](https://github.com/hrsh7th/cmp-vsnip) - nvim-cmp source for vim-vsnip
 - [hrsh7th/vim-vsnip](https://github.com/hrsh7th/vim-vsnip) - Snippet plugin for vim/nvim that supports LSP/VSCode's snippet format
+- [nvim-autopairs](https://github.com/windwp/nvim-autopairs) -  autopairs for neovim written in lua
 - [fleet-theme](https://github.com/projekt0n/github-nvim-theme) - GitHub's Neovim themes
 - [vscode.nvim](https://github.com/Mofiqul/vscode.nvim) - Neovim/Vim color scheme inspired by Dark+ and Light+ theme in Visual Studio Code
 - [vague.nvim](https://github.com/vague2k/vague.nvim) - A cool, dark, low contrast, theme inspired by ThePrimeagen's tmux not fixing rose-pine colors
